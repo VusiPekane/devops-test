@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: FastAPI build
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: pip install requirements.txt
+        
+      - name: Run a test
+        run: pytest
